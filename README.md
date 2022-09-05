@@ -1,2 +1,2 @@
 # openCV
-openCV 실습
+openCV 실습 :D
