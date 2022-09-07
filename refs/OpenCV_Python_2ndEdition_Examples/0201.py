@@ -1,17 +1,15 @@
 # 0201.py
 import cv2
-import numpy as np
 
 imageFile = './data/lena.jpg'
 img  = cv2.imread(imageFile)    # cv2.IMREAD_COLOR
-img2 = cv2.imread(imageFile, 0) # cv2.IMREAD_GRAYSCALE
+font = cv2.FONT_HERSHEY_SIMPLEX
+text = "hello"
+img = cv2.putText(img, text, (100, 100), font, 2, (0, 0, 0), 1, cv2.LINE_AA)
+cv2.imshow('Lena',img)
 
-##encode_img = np.fromfile(imageFile, np.uint8)
-##img = cv2.imdecode(encode_img, cv2.IMREAD_UNCHANGED)
+cv2.imwrite("./data/sample.jpg",img)
 
-cv2.imshow('Lena color',img)
-cv2.imshow('Lena grayscale',img2)
 
 cv2.waitKey()
 cv2.destroyAllWindows()
-
